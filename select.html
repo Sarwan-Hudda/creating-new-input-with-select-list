@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="select1">
+            <select name="" id="">
+                <option value="Select">select</option>
+                <option value="Jaipur">Jaipur</option>
+                <option value="Nagaur">Nagaur</option>
+                <option value="Pali">Pali</option>
+                <option value="Others">Others</option>
+            </select>
+        </div><br>
+        <div class="select2">
+            <select name="" id="">
+                <option value="Select">select</option>
+                <option value="Bikaner">Bikaner</option>
+                <option value="Barmer">Barmer</option>
+                <option value="Jaisalmer">jaisalmer</option>
+                <option value="Others">Others</option>
+            </select>
+        </div>
+    </div>
+    <script> 
+        let inp;
+       let select = document.querySelectorAll('select');
+    for(let i =0; i<select.length; i++){
+        select[i].onchange = ()=>{
+            if(select[i].value ==='Others'){
+                inp = document.createElement('input');
+                inp.setAttribute('type','text')
+                inp.setAttribute('placeholder','Rohit Jain')
+                select[i].insertAdjacentElement("afterend", inp);
+            }
+            else{
+                // inp.remove();
+
+                //which input to remove
+                select[i].nextElementSibling.remove()
+            }
+        }
+    }
+         
+    </script>
+    
+</body>
+</html>
